@@ -1,4 +1,5 @@
 import datetime
+from hashlib import sha256
 
 
 def get_current_time() -> str:
@@ -9,3 +10,8 @@ def get_current_time() -> str:
     time_now = f'{hours_str}:{minutes_str}'
 
     return time_now
+
+
+def hash(string: str) -> str:
+    hashed_string: str = sha256(string.encode()).hexdigest()
+    return hashed_string[:16]
