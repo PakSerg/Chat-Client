@@ -1,0 +1,294 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.div {
+    background-image: url("static/image.jpg");
+    background-size: cover;
+
+    background-position: 50% 50%;
+    background-repeat: revert;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+}
+.side-window h2 {
+    position: relative;
+    top: 1%;
+    left: 15px;
+    color: #000;
+}
+.side-window {
+    display: block;
+    justify-content: center; /* Выравниваем содержимое по центру горизонтально */
+    align-items: center; /* Выравниваем содержимое по центру вертикально */
+    position: absolute;
+    top: 50%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+    width: 20%; /* Ширина окна */
+    height: 80%; /* Высота окна */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.chat-div {
+    display: block;
+    justify-content: center; /* Выравниваем содержимое по центру горизонтально */
+    align-items: center; /* Выравниваем содержимое по центру вертикально */
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 60%; /* Ширина окна */
+    height: 80%; /* Высота окна */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.chat-container {
+    position: relative;
+    display: flex;
+    max-width: 1200px;
+    max-height: 515px;
+    height: 515px;
+    top: -10%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    width: 10%;
+    min-width: 80px;
+}
+.sidebar h2 {
+    position: relative;
+    color: #000;
+}
+.chat-list {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    left: 5%;
+}
+.chat-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00000042;
+    transition: background-color 0.3s ease;
+}
+.chat-item:hover {
+    background-color: #f0f0f0;
+}
+.chat-content {
+    flex: 3;
+    padding: 20px;
+    overflow-y: auto; /* Добавляем вертикальную полосу прокрутки */
+    max-height: 600px; /* Максимальная высота окна с сообщениями */
+    width: 100%; /* Ширина окна */
+    position: relative;
+}
+
+.message-input-div {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 90%;
+    width: 95%; /* Изменено на ширину в процентах */
+    border-radius: 6px;
+    border: 1px solid #00000042;
+    background-color: #ffffff;
+}
+
+/* Убираем остальные стили */
+.message-input-div input[type="text"],
+.message-input-div button {
+    display: inline-block;
+    vertical-align: middle;
+}
+.message-input-div button:hover {
+    opacity: 0.5;
+}
+
+.message-input-div input[type="text"] {
+    width: calc(100% - 80px); /* 80px - ширина кнопки */
+    padding: 15px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.message-input-div button {
+    position: relative; /* Добавляем относительное позиционирование для абсолютного позиционирования псевдоэлемента */
+    width: 30px;
+    height: 30px;
+    left: 30px;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #00000042;
+    border-radius: 50%;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden; /* Обрезаем лишний треугольник */
+}
+.message-input-div button::after {
+    content: ''; /* Обязательно нужно указать контент для псевдоэлемента */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%) rotate(-135deg); /* Поворачиваем на 45 градусов */
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid #00000042;
+    border-bottom: 2px solid #00000042;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.sign-up-window, .log-in-window {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sign-up-window h1, .log-in-window h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sign-up-window input, .log-in-window input {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #00000042;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+.sign-up-window button, .log-in-window button {
+
+    width: 94%;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #00000042;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.sign-up-window button:hover, .log-in-window button:hover {
+    opacity: 0.5;
+}
+
+.sign-up-ref, .log_in_ref {
+    display: block; /* Делаем ссылку блочным элементом */
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    color: #000; /* Цвет текста */
+}
+
+.sign-up-ref:hover, .log_in_ref:hover {
+   opacity: 0.5;
+}
+
+.sign-up-ref:hover, .log_in_ref:visited {
+    color: #000; /* Цвет текста для посещенной ссылки */
+}
+
+.sidebar__heading-wrapper {
+    display: inline-block;
+}
+
+
+
+
+/* Кнопка выпадающего списка */
+.dropbtn {
+  background-color: transparent;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  z-index: 100;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 6px;
+  z-index: 100;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    border-radius: 6px;
+    display: none;
+    position: absolute;
+    right: 20%;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    z-index: 100;
+
+    transition: all 0.5s;
+    color: gray;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+    background-color: #E7E7E7;
+    color: black;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {
+    color: #00000084;
+}
+
+
+
+.add-member-div {
+    float: right;
+}
+
+.new-member-input {
+    width: 200px;
+}
